@@ -1,0 +1,30 @@
+version: '3.8'
+
+services:
+  backend:
+    build: ./backend
+    volumes:
+      - ./backend:/app
+      - sqlite_data:/app/instance
+    ports:
+      - '8080:8080'
+    environment:
+      - FLASK_ENV=production
+    command: rye run waitress-serve --call app:create_app
+
+  frontend:
+    build: ./frontend
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules
+    ports:
+      - '3000:3000'
+    environment:
+      - NODE_ENV=production
+      - REACT_APP_BACKEND_URL=http://backend:8080
+    command: yarn vite --host 0.0.0.0 --port 3000
+    depends_on:
+      - backend
+
+volumes:
+  sqlite_data: # ここでボリュームを定義

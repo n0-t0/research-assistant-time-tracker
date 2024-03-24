@@ -1,0 +1,71 @@
+src/components/MonthlyRecordsCalendar.css
+.calendar-container {
+    display: flex;
+    justify-content: center;
+    margin: 20px;
+}
+
+.react-calendar {
+    border: none;
+    /* 既存のボーダーを削除 */
+    max-width: 100%;
+    font-family: Arial, sans-serif;
+}
+
+/* タイルの内容をオーバーフローさせないようにする */
+.react-calendar__tile {
+    max-height: 100px;
+    /* タイルの最大高さを制限 */
+    overflow: hidden;
+    /* コンテンツがはみ出したら非表示 */
+}
+
+
+/* スマートフォンなどの小さな画面用のスタイル */
+@media (max-width: 600px) {
+    .react-calendar__tile {
+        max-height: 70px;
+        /* 小さな画面ではタイルの高さをさらに小さくする */
+    }
+}
+
+/* タブレット用のスタイル */
+@media (min-width: 601px) and (max-width: 900px) {
+    .react-calendar__tile {
+        max-height: 80px;
+    }
+}
+
+/* デスクトップ用のスタイル */
+@media (min-width: 901px) {
+    .react-calendar__tile {
+        max-height: 100px;
+    }
+}
+
+.react-calendar {
+    width: 100%;
+    /* カレンダーの幅をコンテナの幅に合わせます。 */
+    max-width: 800px;
+    /* 最大幅を設定してカレンダーが過度に大きくならないようにします。 */
+    height: auto;
+    /* 高さを自動で調整します。 */
+    font-family: 'Arial', sans-serif;
+    /* フォントを指定します。 */
+}
+
+.react-calendar__month-view__weekdays {
+    text-align: center;
+}
+
+.react-calendar__tile {
+    max-height: 120px;
+    /* 各タイルの高さを調整します。 */
+    padding: 10px;
+    /* タイル内のパディングを調整します。 */
+}
+
+.react-calendar__month-view__days__day--weekend {
+    background-color: #f0f0f0;
+    /* 週末の日の背景色を変更します。 */
+}
