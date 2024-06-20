@@ -19,7 +19,7 @@ ENV RYE_HOME /home/${USERNAME}/.rye
 ENV PATH ${RYE_HOME}/shims:${PATH}
 
 # Ryeのインストール
-RUN curl -sSf https://rye-up.com/get | RYE_NO_AUTO_INSTALL=1 RYE_INSTALL_OPTION="--yes" bash
+RUN curl -sSL https://rye-up.com/get | RYE_NO_AUTO_INSTALL=1 RYE_INSTALL_OPTION="--yes" bash
 
 # プロジェクトファイルのコピー
 COPY --chown=${USERNAME}:${USERNAME} . .

@@ -1,4 +1,4 @@
-version: '3.8'
+# version: '3.8'
 
 services:
   backend:
@@ -27,4 +27,4 @@ services:
       - backend
 
 volumes:
-  sqlite_data: # ここでボリュームを定義
+  sqlite_data:
