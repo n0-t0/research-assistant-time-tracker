@@ -2,14 +2,17 @@
 
 ## 概要
 
-個人・ローカルで使用する想定の勤務管理フォームです。
+個人・ローカルで使用する想定の勤務管理フォームアプリケーションです。使用しているツールは以下です。
 
 - Backend: Python, Flask
 
 - Frontend: TypeScript, React, React Hook Form
 
+勤務記録の入出力だけでなく、ドメイン固有の独自のルールチェックを意図しています。
 
 ## 実行
+
+docker-composeを使用して以下のように起動します。
 
 ```
 docker compose build
